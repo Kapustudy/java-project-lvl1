@@ -1,4 +1,5 @@
 package hexlet.code;
+import hexlet.code.games.Calc;
 import hexlet.code.games.Game;
 import hexlet.code.games.Greet;
 import hexlet.code.games.Even;
@@ -8,7 +9,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Game game;
-        Game[] listOfGames = {new Greet(), new Even()};
+        Game[] listOfGames = {new Greet(), new Even(), new Calc()};
 
         game = choosingGame(listOfGames);
         if (game != null) {
@@ -34,6 +35,7 @@ public class App {
         switch (gameNumber) {
             case 1 : return new Greet();
             case 2 : return new Even();
+            case 3 : return  new Calc();
             default: return null;
         }
     }
