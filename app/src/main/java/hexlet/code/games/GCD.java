@@ -3,12 +3,12 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements Game {
+public class GCD implements Game {
 
     private String playersName;
     public String getName() {
 
-        return "Calc";
+        return "GCD";
     }
     private void greeting() {
         System.out.println("Welcome to the Brain Games!");
@@ -19,16 +19,6 @@ public class Calc implements Game {
             System.out.println("Hello, " + playersName);
         }
     }
-    private char getRandomOperator() {
-        int maxNumber = 3;
-        Random random = new Random();
-        int operatorNumber = random.nextInt(maxNumber);
-        switch (operatorNumber) {
-            case 0 : return '+';
-            case 1 : return '-';
-            default : return '*';
-        }
-    }
 
     private int getRandomNumber() {
         int maxNumber = 100;
@@ -36,30 +26,42 @@ public class Calc implements Game {
         return random.nextInt(maxNumber);
     }
 
-    private int makeOperation (int firstNumber, int secondNumber, char operator) {
-        switch (operator) {
-            case '+' : return firstNumber + secondNumber;
-            case '-' : return  firstNumber - secondNumber;
-            default : return firstNumber * secondNumber;
+    private int getGCD(int firstNumber, int secondNumber) {
+        if (firstNumber == 0) {
+            return secondNumber;
         }
-    }
 
+        if (secondNumber == 0) {
+            return firstNumber;
+        }
+
+        if (firstNumber < secondNumber) {
+            int tmp = firstNumber;
+            firstNumber = secondNumber;
+            secondNumber = tmp;
+        }
+
+        while (secondNumber != 0) {
+            int tmp2 = firstNumber % secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = tmp2;
+        }
+        return firstNumber;
+    }
     public void startGame() {
         greeting();
         int rightAnswer;
         int userAnswer = 0;
         int firstNumber;
         int secondNumber;
-        char operator;
         int counter = 0;
-        System.out.println("What is the result of the expression?");
+        System.out.println("Find the greatest common divisor of given numbers.");
         Scanner sc = new Scanner(System.in);
         while (counter != 3) {
             firstNumber = getRandomNumber();
             secondNumber = getRandomNumber();
-            operator = getRandomOperator();
-            rightAnswer = makeOperation(firstNumber, secondNumber, operator);
-            System.out.println("Question: " + firstNumber + " " + operator + " " + secondNumber);
+            rightAnswer = getGCD(firstNumber, secondNumber);
+            System.out.println("Question: " + firstNumber + " " + secondNumber);
             if (sc.hasNextInt()) {
                 userAnswer = sc.nextInt();
                 System.out.println("Your answer: " + userAnswer);

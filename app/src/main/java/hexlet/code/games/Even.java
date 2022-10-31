@@ -19,7 +19,7 @@ public class Even implements Game {
         }
     }
     private int getRandom() {
-        int maxNumber = 100000;
+        int maxNumber = 100;
         Random random = new Random();
         return random.nextInt(maxNumber);
     }
