@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         Game game;
-        Game[] listOfGames = {new Greet(), new Even(), new Calc(), new GCD(), new Progression()};
+        Game[] listOfGames = {new Greet(), new Even(), new Calc(), new GCD(), new Progression(), new Prime()};
 
         game = choosingGame(listOfGames);
         if (game != null) {
@@ -35,6 +35,7 @@ public class App {
             case 3 : return  new Calc();
             case 4 : return  new GCD();
             case 5 : return new Progression();
+            case 6 : return new Prime();
             default: return null;
         }
     }
