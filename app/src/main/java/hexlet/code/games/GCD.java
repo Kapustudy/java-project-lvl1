@@ -6,6 +6,9 @@ import java.util.Scanner;
 public final class GCD implements Game {
 
     private String playersName;
+    private final int winCount = 3;
+    private final int maxNumber = 100;
+
     public String getName() {
 
         return "GCD";
@@ -21,7 +24,6 @@ public final class GCD implements Game {
     }
 
     private int getRandomNumber() {
-        int maxNumber = 100;
         Random random = new Random();
         return random.nextInt(maxNumber);
     }
@@ -57,7 +59,7 @@ public final class GCD implements Game {
         int counter = 0;
         System.out.println("Find the greatest common divisor of given numbers.");
         Scanner sc = new Scanner(System.in);
-        while (counter != 3) {
+        while (counter != winCount) {
             firstNumber = getRandomNumber();
             secondNumber = getRandomNumber();
             rightAnswer = getGCD(firstNumber, secondNumber);

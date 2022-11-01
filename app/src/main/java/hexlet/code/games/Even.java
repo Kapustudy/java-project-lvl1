@@ -5,6 +5,8 @@ import java.util.Random;
 public final class Even implements Game {
 
     private String playersName;
+    private final int winCount = 3;
+    private final int maxNumber = 100;
     public String getName() {
 
         return "Even";
@@ -19,7 +21,7 @@ public final class Even implements Game {
         }
     }
     private int getRandom() {
-        int maxNumber = 100;
+        ;
         Random random = new Random();
         return random.nextInt(maxNumber);
     }
@@ -37,7 +39,7 @@ public final class Even implements Game {
         int counter = 0;
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         Scanner sc = new Scanner(System.in);
-        while (counter != 3) {
+        while (counter != winCount) {
             number = getRandom();
             System.out.println("Question: " + number);
             if (sc.hasNextLine()) {

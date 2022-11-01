@@ -6,6 +6,11 @@ import java.util.Scanner;
 public final class Progression implements Game {
 
     private String playersName;
+    private final int winCount = 3;
+    private final int maxNumber = 100;
+    private final int minRandomNumber = 1;
+    private final int maxRandomNumber = 10;
+    private final int minNumberOfElements = 5;
     public String getName() {
 
         return "Progression";
@@ -40,7 +45,7 @@ public final class Progression implements Game {
         greeting();
 
         int userAnswer = 0;
-        int startNumer;
+        int startNumber;
         int step;
         int numberOfElements;
         int[] progression;
@@ -48,11 +53,11 @@ public final class Progression implements Game {
         int counter = 0;
         System.out.println("What number is missing in the progression?");
         Scanner sc = new Scanner(System.in);
-        while (counter != 3) {
-            startNumer = getRandomNumber(1, 10);
-            step = getRandomNumber(1, 10);
-            numberOfElements = getRandomNumber(5, 10);
-            progression = genProgression(startNumer, step, numberOfElements);
+        while (counter != winCount) {
+            startNumber = getRandomNumber(minRandomNumber, maxRandomNumber);
+            step = getRandomNumber(minRandomNumber, maxRandomNumber);
+            numberOfElements = getRandomNumber(minNumberOfElements, maxRandomNumber);
+            progression = genProgression(startNumber, step, numberOfElements);
             secretNumber = getRandomNumber(0, progression.length - 1);
             System.out.print("Question: ");
             for (int i = 0; i < progression.length; i++) {
