@@ -13,7 +13,7 @@ public class Greet implements Game {
         System.out.print("May I have your name? ");
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
-            System.out.println("Hello, " + sc.nextLine());
+            System.out.println("Hello, " + sc.nextLine()  + "!");
         }
     }
     public void startGame() {

@@ -15,7 +15,7 @@ public class Even implements Game {
         Scanner sc = new Scanner(System.in);
         if (sc.hasNextLine()) {
             playersName = sc.nextLine();
-            System.out.println("Hello, " + playersName);
+            System.out.println("Hello, " + playersName + "!");
         }
     }
     private int getRandom() {
