@@ -6,7 +6,7 @@ public final class Even implements Game {
 
     private String playersName;
     private final int winCount = 3;
-    private final int maxNumber = 100;
+
     public String getName() {
 
         return "Even";
@@ -21,7 +21,7 @@ public final class Even implements Game {
         }
     }
     private int getRandom() {
-        ;
+        final int maxNumber = 100;
         Random random = new Random();
         return random.nextInt(maxNumber);
     }

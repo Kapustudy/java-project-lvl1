@@ -7,7 +7,6 @@ public final class Progression implements Game {
 
     private String playersName;
     private final int winCount = 3;
-    private final int maxNumber = 100;
     private final int minRandomNumber = 1;
     private final int maxRandomNumber = 10;
     private final int minNumberOfElements = 5;
