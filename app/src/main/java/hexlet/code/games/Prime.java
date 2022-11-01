@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-final public class Prime implements Game {
+public final class Prime implements Game {
 
     private String playersName;
     public String getName() {
@@ -26,7 +26,7 @@ final public class Prime implements Game {
     }
 
     private String rightAnswer(int number) {
-        if(number == 0) {
+        if (number == 0) {
             return "no";
         }
         for (int i = 2; i < number; i++) {

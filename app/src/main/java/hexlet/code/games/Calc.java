@@ -3,13 +3,14 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-final public class Calc implements Game {
+public final  class Calc implements Game {
 
     private String playersName;
-    final int maxNumber = 3;
-    final int plus = 0;
-    final int minus = 1;
-    final int winCount = 3;
+    private final int maxNumber = 3;
+    private final int plus = 0;
+    private final int minus = 1;
+    private final int winCount = 3;
+
     public String getName() {
 
         return "Calc";
@@ -35,9 +36,9 @@ final public class Calc implements Game {
     }
 
     private int getRandomNumber() {
-        int maxNumber = 100;
+        final int maxRandomNumber = 100;
         Random random = new Random();
-        return random.nextInt(maxNumber);
+        return random.nextInt(maxRandomNumber);
     }
 
     private int makeOperation(int firstNumber, int secondNumber, char operator) {

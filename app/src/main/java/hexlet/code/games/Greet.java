@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import java.util.Scanner;
 
-final public class Greet implements Game {
+public final class Greet implements Game {
 
     public String getName() {
         return "Greet";

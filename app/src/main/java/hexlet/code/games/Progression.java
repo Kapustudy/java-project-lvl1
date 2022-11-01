@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-final public class Progression implements Game {
+public final class Progression implements Game {
 
     private String playersName;
     public String getName() {
@@ -25,7 +25,7 @@ final public class Progression implements Game {
         return random.nextInt(maxNumber - minNumber + 1) + minNumber;
     }
 
-    private int[] genProgression (int startNumber, int step, int numberOfElements) {
+    private int[] genProgression(int startNumber, int step, int numberOfElements) {
         int[] result = new int[numberOfElements];
         for (int i = 0; i < result.length; i++) {
             result[i] = startNumber;
@@ -50,11 +50,11 @@ final public class Progression implements Game {
         Scanner sc = new Scanner(System.in);
         while (counter != 3) {
             startNumer = getRandomNumber(1, 10);
-            step = getRandomNumber(1,10);
+            step = getRandomNumber(1, 10);
             numberOfElements = getRandomNumber(5, 10);
             progression = genProgression(startNumer, step, numberOfElements);
             secretNumber = getRandomNumber(0, progression.length - 1);
-            System.out.print("Question: " );
+            System.out.print("Question: ");
             for (int i = 0; i < progression.length; i++) {
                 if (i == secretNumber) {
                     System.out.print(".. ");

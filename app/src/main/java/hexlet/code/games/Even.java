@@ -2,7 +2,7 @@ package hexlet.code.games;
 import java.util.Scanner;
 import java.util.Random;
 
-final public class Even implements Game {
+public final class Even implements Game {
 
     private String playersName;
     public String getName() {
