@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Prime implements Game {
+final public class Prime implements Game {
 
     private String playersName;
     public String getName() {

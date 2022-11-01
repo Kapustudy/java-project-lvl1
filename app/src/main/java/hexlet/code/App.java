@@ -1,5 +1,11 @@
 package hexlet.code;
-import hexlet.code.games.*;
+import hexlet.code.games.Game;
+import hexlet.code.games.Greet;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Even;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Calc;
 
 import java.util.Scanner;
 
@@ -16,6 +22,13 @@ public class App {
 
     private static Game choosingGame(Game[] listOfGames) {
         int gameNumber = 0;
+        final int greetNumber = 1;
+        final int evenNumber = 2;
+        final int calcNumber = 3;
+        final int gcdNumber = 4;
+        final int progressionNumber = 5;
+        final int primeNumber = 6;
+
         System.out.println("Please enter the game number and press Enter.");
         if (listOfGames == null) {
             return null;
@@ -30,12 +43,12 @@ public class App {
             System.out.println("Your choice: " + gameNumber);
         }
         switch (gameNumber) {
-            case 1 : return new Greet();
-            case 2 : return new Even();
-            case 3 : return  new Calc();
-            case 4 : return  new GCD();
-            case 5 : return new Progression();
-            case 6 : return new Prime();
+            case greetNumber : return new Greet();
+            case evenNumber : return new Even();
+            case calcNumber : return  new Calc();
+            case gcdNumber : return  new GCD();
+            case progressionNumber : return new Progression();
+            case primeNumber : return new Prime();
             default: return null;
         }
     }

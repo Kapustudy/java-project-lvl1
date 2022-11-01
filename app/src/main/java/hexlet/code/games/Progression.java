@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Progression implements Game {
+final public class Progression implements Game {
 
     private String playersName;
     public String getName() {

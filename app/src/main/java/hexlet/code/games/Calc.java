@@ -3,9 +3,13 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Calc implements Game {
+final public class Calc implements Game {
 
     private String playersName;
+    final int maxNumber = 3;
+    final int plus = 0;
+    final int minus = 1;
+    final int winCount = 3;
     public String getName() {
 
         return "Calc";
@@ -20,12 +24,12 @@ public class Calc implements Game {
         }
     }
     private char getRandomOperator() {
-        int maxNumber = 3;
+
         Random random = new Random();
         int operatorNumber = random.nextInt(maxNumber);
         switch (operatorNumber) {
-            case 0 : return '+';
-            case 1 : return '-';
+            case plus : return '+';
+            case minus : return '-';
             default : return '*';
         }
     }
@@ -36,7 +40,7 @@ public class Calc implements Game {
         return random.nextInt(maxNumber);
     }
 
-    private int makeOperation (int firstNumber, int secondNumber, char operator) {
+    private int makeOperation(int firstNumber, int secondNumber, char operator) {
         switch (operator) {
             case '+' : return firstNumber + secondNumber;
             case '-' : return  firstNumber - secondNumber;
@@ -54,7 +58,7 @@ public class Calc implements Game {
         int counter = 0;
         System.out.println("What is the result of the expression?");
         Scanner sc = new Scanner(System.in);
-        while (counter != 3) {
+        while (counter != winCount) {
             firstNumber = getRandomNumber();
             secondNumber = getRandomNumber();
             operator = getRandomOperator();

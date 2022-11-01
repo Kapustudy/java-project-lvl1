@@ -3,7 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GCD implements Game {
+final public class GCD implements Game {
 
     private String playersName;
     public String getName() {
